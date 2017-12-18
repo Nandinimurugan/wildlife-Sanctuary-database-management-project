@@ -1,0 +1,186 @@
+
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <link rel="stylesheet" type="text/css" href="{% static 'animal_details/style4.css' %}">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<header>
+
+
+<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+ <ul id="nav-mobile" class="side-nav fixed">
+      
+
+         <li class="logo center teal white-text"><a id="logo-container" href="/" class="brand-logo">
+            <object id="front-page-logo" type="" ><i class="material-icons">filter_vintage</i></object></a>
+         <h6 class="center"><strong>Prakruthi Sanctuary</strong></h6>
+            <br>
+     </li>
+
+      	<li class="bold active teal lighten-3"><a href="{% url 'animal_details:index' %}" class="waves-effect waves-teal">Animals</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:med-detail' %}" class="waves-effect waves-teal">Medicine</a></li>
+      	
+        <li><div class="divider"></div></li>
+      	<li class="bold"><a href="{% url 'animal_details:Tourist-detail' %}" class="waves-effect waves-teal">Tourists</a></li>
+      	<li><div class="divider"></div></li>
+      	<li class="bold"><a href="{% url 'animal_details:Staff-detail' %}" class="waves-effect waves-teal">Employees</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:grant-detail' %}" class="waves-effect waves-teal">Grants</a></li>
+      	
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:acc-detail' %}" class="waves-effect waves-teal">Accounts</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:logout_user' %}" class="waves-effect waves-teal">Log Out</a></li>
+        <li><div class="divider"></div></li>
+
+        
+</ul></header>
+<main>
+	<nav>
+    <div class="nav-wrapper center red ">
+            <a href="#" class="brand-logo center">{{ animal.Animal_species }}</a>
+
+    </div>
+    
+  </nav>
+  
+
+
+
+
+
+
+	<div class="row">
+
+
+		<div class="col s4 offset-s4 ">
+
+       <div class="card center ">
+            <div class="card-image center">
+              <img src="{{ animal.Animal_image.url }}"  class="img-responsive ">
+              
+            </div>
+          </div>
+    </div>
+  </div>
+  <!-- <div class="center">
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1 z-depth-4">Animal species</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Animal_species}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1">Animal count</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Animal_count}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1"> Animal_type</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Animal_type}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1">Scientific_name</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Scientific_name}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1">Country</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Country}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1">Animal_feed</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Animal_feed}}</div></div>
+   </div>
+   <div class="row">
+      <div class="col s3 offset-s3"><div class="red lighten-1">Feed_cost</div></div>
+      <div class="col s3"><div class="red lighten-2">{{animal.Feed_cost}}</div></div>
+   </div>-->
+
+  <div class="row">
+  <div class="col s6 offset-s3"> 
+  <table class="striped centered responsive-table grey ">
+    
+      <tr>
+        <th>Animal Species</th>
+        <td>{{animal.Animal_species}}</td>
+       
+      </tr>
+      <tr>
+        <th>Animal Count</th>
+        <td>{{animal.Animal_count}}</td>
+       
+      </tr>
+      <tr>
+        <th>Animal Type</th>
+        <td>{{animal.Animal_type}}</td>
+       
+      </tr>
+      <tr>
+        <th>Scientific Name</th>
+        <td>{{animal.Scientific_name}}</td>
+       
+      </tr>
+       <tr>
+        <th>Country</th>
+        <td>{{animal.Country}}</td>
+       
+      </tr>
+     <tr>
+        <th>Animal Feed</th>
+        <td>{{animal.Animal_feed}}</td>
+       
+      </tr>
+       <tr>
+        <th>Feed Cost</th>
+        <td>{{animal.Feed_cost}}</td>
+       
+      </tr>
+    
+    
+    
+    
+     
+  </table>
+</div>
+</div>
+
+
+ 
+
+ 
+
+   
+
+   
+
+
+
+
+          
+            
+
+</main>
+
+
+       
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>  $(".button-collapse").sideNav({ menuWidth: 200,}
+);</script>
+   
+
+
+      </body>
+</html>

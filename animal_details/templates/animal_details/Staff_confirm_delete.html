@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'animal_details/style4.css' %}">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<body>
+	<div class="center">
+<form action="" method="post">{% csrf_token %}
+    <p><h3>Are you sure you want to delete "{{ object }}"?</h3></p>
+    <h2><input class="btn btn-large waves-effect waves-light teal z-depth-4" type="submit" value="Confirm" /></h2>
+</form>
+</div>
+
+
+
+
+
+

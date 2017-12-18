@@ -1,0 +1,13 @@
+{% extends 'animal_details/base.html' %}
+
+{% block body %}
+<h3>Animals in Sanctary are:</h3>
+    <ul>
+        {% for animal in object_list %}
+            <li><a href="{% url 'animal_details:detail' animal.id%}">{{animal.Animal_species}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}

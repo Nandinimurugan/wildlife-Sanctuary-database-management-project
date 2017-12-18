@@ -1,0 +1,35 @@
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+ <link rel="stylesheet" type="text/css" href="{% static 'animal_details/style3.css' %}">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+<header>
+
+
+<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+ <ul id="nav-mobile" class="side-nav fixed">
+      <!--<ul id="nav-mobile" class="side-nav fixed">-->
+
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Animals</a></li>
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Employees</a></li>
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Tourists</a></li>
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Grants</a></li>
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Medicine</a></li>
+      	<li class="bold"><a href="#" class="waves-effect waves-teal">Accounts</a></li>
+</ul></header>
+
+
+       

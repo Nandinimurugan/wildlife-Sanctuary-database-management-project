@@ -1,0 +1,108 @@
+
+
+
+
+
+
+
+
+
+
+{% load staticfiles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'animal_details/style4.css' %}">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+    <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+ <ul id="nav-mobile" class="side-nav fixed">
+      <!--<ul id="nav-mobile" class="side-nav fixed">-->
+
+
+         <li class="logo center teal white-text"><a id="logo-container" href="/" class="brand-logo">
+            <object id="front-page-logo" type="" ><i class="material-icons">filter_vintage</i></object></a>
+         <h6 class="center"><strong>Prakruthi Sanctuary</strong></h6>
+            <br>
+     </li>
+
+        <li class="bold "><a href="{% url 'animal_details:index' %}" class="waves-effect waves-teal">Animals</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:med-detail' %}" class="waves-effect waves-teal">Medicine</a></li>
+        
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:Tourist-detail' %}" class="waves-effect waves-teal">Tourists</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold active teal lighten-3"><a href="{% url 'animal_details:Staff-detail' %}" class="waves-effect waves-teal">Employees</a></li>
+        <li><div class="divider"></div></li>
+        
+        
+        <li class="bold"><a href="{% url 'animal_details:grant-detail' %}" class="waves-effect waves-teal">Grants</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:acc-detail' %}" class="waves-effect waves-teal">Accounts</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:logout_user' %}" class="waves-effect waves-teal">Log Out</a></li>
+        <li><div class="divider"></div></li>
+
+
+        
+</ul></header>
+
+<main>
+    <nav>
+        <div class="nav-wrapper center red z-depth-3">
+            <a href="{% url 'animal_details:Staff-detail' %}" class="brand-logo center">Employee Details</a>
+
+        </div>
+    </nav>
+  <br>
+    <a href="{% url 'animal_details:Staff-add' %}" class="btn btn-large waves-effect waves-light teal right z-depth-4"><i class="material-icons left">add</i>Add Employee</a>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+<div class="container">
+    <table class="striped centered responsive-table">
+
+        <thead>
+          <tr>
+             <th>Employee Id</th>
+             <th>Employee Name</th>
+              <th>Designation</th>
+              <th>Salary</th>
+              <th>update</th>
+              <th>Delete</th>
+          </tr>
+        </thead>
+         <tbody>
+        {% for Staff in object_list %}
+          <tr>
+              <td>{{Staff.id}}</td>
+              <td>{{Staff.Staff_Name}}</td>
+              <td>{{Staff.Designation}}</td>
+              <td>{{Staff.Salary}}</td>
+              <td><a href="{% url 'animal_details:Staff-update' Staff.id %}" class="btn-floating waves-effect waves-light green "><i class="large material-icons">create</i></a></td>
+              <td><a href="{% url 'animal_details:Staff-delete' Staff.id %}" class="btn-floating red "><i class="large material-icons">delete</i></a></td>
+
+
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+       
+       
+</div>
+</main>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>  $(".button-collapse").sideNav({menuWidth:200,});</script>
+
+
+
+

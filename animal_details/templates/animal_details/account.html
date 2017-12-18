@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'animal_details/style4.css' %}">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+    <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+ <ul id="nav-mobile" class="side-nav fixed">
+      <!--<ul id="nav-mobile" class="side-nav fixed">-->
+
+     <li class="logo center teal"><a id="logo-container" href="{% url 'animal_details:index' %}" class="brand-logo">
+            <object id="front-page-logo" type="" ><i class="material-icons">filter_vintage</i></object></a>
+         <h6 class="center white-text"><strong>Prakruthi Sanctuary</strong></h6>
+            <br>
+     </li>
+
+     <li class="bold"><a href="" class="waves-effect waves-red">Animals</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="" class="waves-effect waves-teal">Employees</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:Tourist-detail' %}" class="waves-effect waves-red">Tourists</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:grant-detail' %}" class="waves-effect waves-red">Grants</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold"><a href="{% url 'animal_details:med-detail' %}" class="waves-effect waves-red">Medicine</a></li>
+        <li><div class="divider"></div></li>
+        <li class="bold active teal lighten-3"><a href="{% url 'animal_details:acc-detail' %}" class="waves-effect waves-red">Accounts</a></li>
+        <li class="bold"><a href="{% url 'animal_details:logout_user' %}" class="waves-effect waves-teal">Log Out</a></li>
+        <li><div class="divider"></div></li>
+</ul></header>
+
+<main>
+    <nav>
+        <div class="nav-wrapper center red z-depth-3">
+            <a href="{% url 'animal_details:acc-detail' %}" class="brand-logo center">Accounts Details</a>
+
+        </div>
+    </nav>
+  <br>
+    <a href="{% url 'animal_details:account-add' %}" class="btn btn-large waves-effect waves-light teal right z-depth-4"><i class="material-icons left">add</i>Update Account</a>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+<div class="container">
+
+  <table class="striped centered responsive-table">
+     <thead>
+       <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Income</th>
+          <th>Expenditure</th>
+
+       </tr>
+     </thead>
+     <tbody>
+     {% for accounts in new_account %}
+      <tr>
+          <td>{{accounts.id}}</td>
+          <td>{{accounts.Date}}</td>
+          <td>{{accounts.Income}}</td>
+          <td>{{accounts.Expenditure}}</td>
+
+      </tr>
+     {% endfor %}
+     </tbody>
+  </table>
+</div>
+</main>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>  $(".button-collapse").sideNav({menuWidth:200,});</script>

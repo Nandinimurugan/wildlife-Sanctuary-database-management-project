@@ -1,0 +1,39 @@
+
+{% load staticfiles%}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'animal_details/style4.css' %}">
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% include 'animal_details/form-template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <br>
+                                
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
